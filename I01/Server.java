@@ -68,16 +68,18 @@ public class Server {
             }
             // LOOKUP
             else if (parts.length == 2) {
+		response = "NOT_FOUND";
+
                 for (int i = 0; i < entries.size(); i++) {
                     Pair obj = (Pair) entries.get(i);
 
                     if (obj.getDns().equals(parts[1].trim())) {
                         response = obj.getIp();
                         break;
-                    } else
-                        response = "NOT_FOUND";
+                    }
                 }
             }
+
 
             //send response
             InetAddress radress = packet.getAddress();
