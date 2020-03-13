@@ -42,7 +42,7 @@ public class Client extends Thread {
 
             data = received;
 
-            System.out.println(received);
+            System.out.println("multicast: " + received);
 
             socket.leaveGroup(group);
             socket.close();
@@ -91,8 +91,9 @@ public class Client extends Thread {
             String response = new String(rbuf, 0, packet.getLength());
 
             socket.close();
+            
+            System.out.println(oper + " " + opnd + " :: " + response);
 
-            System.out.println("Client: " + oper + " " + opnd + " : " + response);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -37,8 +37,6 @@ public class Server {
                 socket.receive(packet);
                 String received = new String(packet.getData());
 
-                System.out.println("Server: " + received);
-
                 String[] parts = received.split(" ");
 
                 String response = " ";
@@ -75,6 +73,8 @@ public class Server {
                     }
                 }
 
+                System.out.println(received + " :: " + response);
+
                 // send response
                 InetAddress radress = packet.getAddress();
                 int rport = packet.getPort();
@@ -108,6 +108,8 @@ class Multicast implements Runnable {
         socket = new MulticastSocket();
 
         socket.setTimeToLive(1);
+
+        System.out.println("multicast: " + mcast_addr + " " + mcast_port + " : localhost " + srvc_port);
     }
 
     @Override
