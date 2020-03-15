@@ -1,3 +1,5 @@
+package example.hello;
+
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.RemoteException;
@@ -14,6 +16,7 @@ public class Server implements ServerInterface {
     public static void main(String args[]) {
         if (args.length != 1) {
             System.out.println("Usage: java Server <remote_object_name>");
+            return;
         }
 
         Server obj = new Server();

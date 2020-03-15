@@ -1,3 +1,5 @@
+package example.hello;
+
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
@@ -10,6 +12,7 @@ public class Client {
 
         if (args.length != 4) {
             System.out.println("Usage: java Server <host_name> <remote_object_name> <oper> <opnd> *");
+            return;
         }
 
         String oper = args[2];
