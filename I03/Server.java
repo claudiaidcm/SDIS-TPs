@@ -75,6 +75,8 @@ public class Server implements ServerInterface {
             }
         }
 
+        System.out.println(received + " :: " + response);
+
         return response;
 
     }

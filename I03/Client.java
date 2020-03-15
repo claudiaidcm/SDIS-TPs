@@ -42,7 +42,7 @@ public class Client {
             }
 
             String response = stub.service(message);
-            System.out.println("response: " + response);
+            System.out.println(oper + " " + opnd + " :: " + response);
         } catch (Exception e) {
             System.err.println("Client exception: " + e.toString());
             e.printStackTrace();
